@@ -16,11 +16,11 @@ public:
     Graph() = default;
     Graph(int vertices, int edges);
 
-    Graph(Graph & second_graph);
+    Graph(const Graph & second_graph);
 
     ~Graph();
 
-    friend Graph operator +(const Graph &first_graph, const Graph & second_graph);
+    friend Graph operator +(Graph first_graph, const Graph & second_graph);
 
 
     Graph & operator =(const Graph & second_graph);
@@ -73,7 +73,7 @@ Graph::Graph(int vertices, int edges) {
     this->nr_of_edges = edges;
 }
 
-Graph::Graph(Graph &second_graph) {
+Graph::Graph(const Graph &second_graph) {
 
     this->nr_of_vertices =  second_graph.nr_of_vertices;
     this->nr_of_edges = second_graph.nr_of_edges;
@@ -170,7 +170,7 @@ void Graph::set_nr_of_edges(const int &edges) {
     nr_of_edges = edges;
 }
 
-Graph operator+(const Graph &first_graph, const Graph &second_graph) {
+Graph operator+(Graph first_graph, const Graph & second_graph) {
 
     Graph newGraph;
     if (first_graph.get_nr_of_vertices() != second_graph.get_nr_of_vertices())
