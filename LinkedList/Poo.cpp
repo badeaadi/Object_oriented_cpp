@@ -40,8 +40,5 @@ int main()
     pq.push_back(312);
     pq.push_back(354);
 
-   Deque<int> :: Iterator itpq = pq.begin();
-    std::cout << itpq << '\n';
-
     return 0;
 }
