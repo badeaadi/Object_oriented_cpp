@@ -2,8 +2,15 @@
 #define CLOTH_H
 #include <vector>
 #include <string>
-#include "clients.h"
 using namespace std;
+
+
+class Washer;
+class NormalWasher;
+class SpecialWasher;
+class Spinner;
+class Dryer;
+class Ironer;
 
 class Cloth {
 
@@ -16,6 +23,8 @@ class Cloth {
         double weight;
         int color;  //0 for light colors, 1 for dark ones
         string name_of_cloth;
+
+        int type_of_machine;
 };
 
 istream & operator >>(istream & in, Cloth & this_cloth)

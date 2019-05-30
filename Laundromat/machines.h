@@ -1,11 +1,17 @@
 #ifndef MACHINES_H
 #define MACHINES_H
-#include "clients.h"
+#include <vector>
 #include "cloth.h"
-#include "spinner.h"
-#include "dryers.h"
+#include "clients.h"
+
 using namespace std;
 
+class Washer;
+class NormalWasher;
+class SpecialWasher;
+class Spinner;
+class Dryer;
+class Ironer;
 
 template <typename T>
 class Machine {                         //Masina
@@ -16,13 +22,13 @@ class Machine {                         //Masina
         vector <Cloth *> v;
         void set_ord_number(int new_ord_number);
 
-        friend ostream & operator >> (ostream & in, Machine<T> & this_machine) {
+        friend istream & operator >> (istream & in, Machine<T> & this_machine) {
             in >> this_machine.current_capacity;;
             return in;
         }
+        int ord_number;
 
     private :
-        int ord_number;
 };
 template <typename T>
 Machine<T>::Machine() {

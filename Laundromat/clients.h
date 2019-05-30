@@ -4,10 +4,9 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "machines.h"
 #include "cloth.h"
-#include "washer.h"
-#include "dryers.h"
+
+
 using namespace std;
 
 class Client_Singleton{
@@ -37,6 +36,10 @@ void Client_Singleton :: set_total_number_of_clients(int new_number_of_clients)
 {
     total_number_of_clients  = new_number_of_clients;
 }
+
+
+
+
 
 class Client {
     public :
